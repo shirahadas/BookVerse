@@ -1,20 +1,19 @@
 # 📚 BookVerse
 
-BookVerse is a responsive web application that helps users discover books using the Google Books API and manage a personal reading library.
-
-The application allows users to search for books, browse by category, save favorites, organize their personal library, and track reading progress through an interactive dashboard.
+BookVerse is a responsive web application for discovering books and managing a personal reading library. The application uses the Google Books API to search for books and allows users to save their favorites, organize their collection, and track reading progress.
 
 ---
 
 ## Features
 
-- 🔍 Search books using the Google Books API
-- 📖 Browse books by category
-- ❤️ Save favorite books
-- 📚 Personal library management
-- 📊 Reading statistics dashboard
-- 💾 LocalStorage persistence
-- 📱 Fully responsive interface
+- Search books using the Google Books API
+- Browse books by categories
+- View detailed book information
+- Save favorite books
+- Manage a personal library
+- Reading statistics dashboard
+- Persistent data storage using LocalStorage
+- Responsive design for desktop and mobile devices
 
 ---
 
@@ -30,7 +29,7 @@ The application allows users to search for books, browse by category, save favor
 
 ## Installation
 
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/shirahadas/BookVerse.git
@@ -38,32 +37,34 @@ git clone https://github.com/shirahadas/BookVerse.git
 
 2. Open the project folder.
 
-3. Launch `index.html` in your browser.
+3. Run `index.html` in your web browser.
 
 ---
 
 ## Data Source
 
-This project uses the Google Books API to retrieve book information.
+Book information is retrieved from the Google Books API.
 
-User data (saved books and reading progress) is stored locally using the browser's LocalStorage.
+User data, including saved books and reading progress, is stored locally using the browser's LocalStorage.
 
 ---
 
 ## Known Limitations
 
-- Requires an internet connection to retrieve books.
-- Saved data is stored only in the current browser.
+- Internet connection is required to retrieve book data.
+- User data is stored only in the current browser.
 
 ---
 
 ## Project Documentation
 
-- PRD: `PRD.md`
-- Development Tasks: `tasks.md`
+- **PRD:** `PRD.md`
+- **Development Tasks:** `tasks.md`
 
 ---
 
 ## Author
 
-Created as the final project for the **"From PRD to GitHub – Development with an AI Coding Assistant"** course.
+Final project for the course:
+
+**From PRD to GitHub – Development with an AI Coding Assistant**
