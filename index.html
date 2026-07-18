@@ -3,20 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ShelfSpace - discover books and manage your personal reading library." />
+
+  <meta
+    name="description"
+    content="ShelfSpace - discover books and manage your personal reading library."
+  />
+
   <title>ShelfSpace | Book Discovery</title>
+
+  <!-- Prevents the unnecessary favicon 404 error -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>"
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="./style.css?v=4" />
 </head>
 
 <body>
   <header class="topbar">
-    <a href="#" class="brand" data-view-link="discover" aria-label="ShelfSpace home">
-      <span class="brand-icon"><i class="fa-solid fa-book-open"></i></span>
+    <a
+      href="#"
+      class="brand"
+      data-view-link="discover"
+      aria-label="ShelfSpace home"
+    >
+      <span class="brand-icon">
+        <i class="fa-solid fa-book-open"></i>
+      </span>
+
       <span class="brand-text">
         <strong>ShelfSpace</strong>
         <small>Find your next story</small>
@@ -24,37 +52,96 @@
     </a>
 
     <nav class="main-navigation" aria-label="Main navigation">
-      <button class="nav-button active" data-view-link="discover">
-        <i class="fa-solid fa-compass"></i> Discover
+      <button
+        type="button"
+        class="nav-button active"
+        data-view-link="discover"
+      >
+        <i class="fa-solid fa-compass"></i>
+        Discover
       </button>
-      <button class="nav-button" data-view-link="library">
-        <i class="fa-solid fa-layer-group"></i> My Library
+
+      <button
+        type="button"
+        class="nav-button"
+        data-view-link="library"
+      >
+        <i class="fa-solid fa-layer-group"></i>
+        My Library
       </button>
-      <button class="nav-button" data-view-link="dashboard">
-        <i class="fa-solid fa-chart-pie"></i> Dashboard
+
+      <button
+        type="button"
+        class="nav-button"
+        data-view-link="dashboard"
+      >
+        <i class="fa-solid fa-chart-pie"></i>
+        Dashboard
       </button>
     </nav>
 
-    <button id="themeToggle" class="icon-button" type="button" aria-label="Switch color theme">
+    <button
+      id="themeToggle"
+      class="icon-button"
+      type="button"
+      aria-label="Switch color theme"
+    >
       <i class="fa-solid fa-sun"></i>
     </button>
   </header>
 
   <main>
+    <!-- Discover View -->
     <section id="discoverView" class="view active-view">
       <section class="hero-section">
         <div class="hero-content">
-          <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> Smart Book Discovery</span>
-          <h1>Stories worth <span>getting lost in.</span></h1>
-          <p>Search millions of books, discover new stories and build your personal reading library.</p>
+          <span class="eyebrow">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Smart Book Discovery
+          </span>
 
-          <form id="searchForm" class="search-form">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input id="searchInput" type="search" placeholder="Search by title, author or ISBN..." autocomplete="off" required />
-            <button type="submit">Search</button>
+          <h1>
+            Stories worth
+            <span>getting lost in.</span>
+          </h1>
+
+          <p>
+            Search millions of books, discover new stories and build your
+            personal reading library.
+          </p>
+
+          <form
+            id="searchForm"
+            class="search-form"
+            role="search"
+          >
+            <i
+              class="fa-solid fa-magnifying-glass"
+              aria-hidden="true"
+            ></i>
+
+            <input
+              id="searchInput"
+              name="bookSearch"
+              type="search"
+              placeholder="Search by title, author or ISBN..."
+              autocomplete="off"
+              aria-label="Search books"
+              required
+            />
+
+            <button
+              id="searchButton"
+              type="submit"
+            >
+              Search
+            </button>
           </form>
 
-          <div id="recentSearches" class="recent-searches"></div>
+          <div
+            id="recentSearches"
+            class="recent-searches"
+          ></div>
         </div>
 
         <div class="hero-decoration" aria-hidden="true">
@@ -68,14 +155,19 @@
         <div class="section-heading">
           <div>
             <span class="section-label">Explore</span>
-            <h2 id="resultsTitle">Trending Books</h2>
+            <h2 id="resultsTitle">Search for a Book</h2>
           </div>
-          <span id="resultCount" class="result-count"></span>
+
+          <span
+            id="resultCount"
+            class="result-count"
+          ></span>
         </div>
 
         <div class="filters-container">
           <label>
             <span>Language</span>
+
             <select id="languageFilter">
               <option value="">All Languages</option>
               <option value="en">English</option>
@@ -87,6 +179,7 @@
 
           <label>
             <span>Book Type</span>
+
             <select id="typeFilter">
               <option value="">All Books</option>
               <option value="ebooks">Ebooks</option>
@@ -97,6 +190,7 @@
 
           <label>
             <span>Sort By</span>
+
             <select id="sortFilter">
               <option value="relevance">Relevance</option>
               <option value="newest">Newest</option>
@@ -104,62 +198,137 @@
           </label>
         </div>
 
-        <div id="loadingState" class="state-message hidden">
+        <div
+          id="loadingState"
+          class="state-message hidden"
+        >
           <i class="fa-solid fa-spinner fa-spin"></i>
           <p>Searching the shelves...</p>
         </div>
 
-        <div id="errorState" class="state-message hidden">
+        <div
+          id="errorState"
+          class="state-message hidden"
+        >
           <i class="fa-solid fa-triangle-exclamation"></i>
           <h3>Something went wrong</h3>
           <p id="errorMessage">Please try again.</p>
         </div>
 
-        <div id="emptyState" class="state-message hidden">
+        <div
+          id="emptyState"
+          class="state-message hidden"
+        >
           <i class="fa-solid fa-book-open-reader"></i>
           <h3>No books found</h3>
           <p>Try a different title, author or filter.</p>
         </div>
 
-        <div id="booksGrid" class="books-grid"></div>
+        <div
+          id="booksGrid"
+          class="books-grid"
+        ></div>
 
-        <button id="loadMoreButton" class="load-more-button hidden">
-          Load More <i class="fa-solid fa-arrow-down"></i>
+        <button
+          id="loadMoreButton"
+          type="button"
+          class="load-more-button hidden"
+        >
+          Load More
+          <i class="fa-solid fa-arrow-down"></i>
         </button>
       </section>
     </section>
 
+    <!-- Library View -->
     <section id="libraryView" class="view">
       <section class="page-header">
-        <span class="eyebrow"><i class="fa-solid fa-bookmark"></i> Personal Collection</span>
+        <span class="eyebrow">
+          <i class="fa-solid fa-bookmark"></i>
+          Personal Collection
+        </span>
+
         <h1>My Library</h1>
-        <p>Manage your saved books, favorites and reading progress.</p>
+
+        <p>
+          Manage your saved books, favorites and reading progress.
+        </p>
       </section>
 
       <section class="content-section">
         <div class="library-tabs">
-          <button class="library-tab active" data-library-filter="all">All</button>
-          <button class="library-tab" data-library-filter="favorite">Favorites</button>
-          <button class="library-tab" data-library-filter="want-to-read">Want to Read</button>
-          <button class="library-tab" data-library-filter="reading">Reading</button>
-          <button class="library-tab" data-library-filter="finished">Finished</button>
+          <button
+            type="button"
+            class="library-tab active"
+            data-library-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            type="button"
+            class="library-tab"
+            data-library-filter="favorite"
+          >
+            Favorites
+          </button>
+
+          <button
+            type="button"
+            class="library-tab"
+            data-library-filter="want-to-read"
+          >
+            Want to Read
+          </button>
+
+          <button
+            type="button"
+            class="library-tab"
+            data-library-filter="reading"
+          >
+            Reading
+          </button>
+
+          <button
+            type="button"
+            class="library-tab"
+            data-library-filter="finished"
+          >
+            Finished
+          </button>
         </div>
 
-        <div id="libraryGrid" class="books-grid"></div>
+        <div
+          id="libraryGrid"
+          class="books-grid"
+        ></div>
 
-        <div id="libraryEmptyState" class="state-message hidden">
+        <div
+          id="libraryEmptyState"
+          class="state-message hidden"
+        >
           <i class="fa-solid fa-book"></i>
           <h3>Your library is empty</h3>
-          <p>Discover a book and save it to your personal collection.</p>
+          <p>
+            Discover a book and save it to your personal collection.
+          </p>
         </div>
       </section>
     </section>
 
+    <!-- Dashboard View -->
     <section id="dashboardView" class="view">
       <section class="page-header">
-        <span class="eyebrow"><i class="fa-solid fa-chart-simple"></i> Reading Insights</span>
+        <span class="eyebrow">
+          <i class="fa-solid fa-chart-simple"></i>
+          Reading Insights
+        </span>
+
         <h1>Your Dashboard</h1>
-        <p>View a summary of your personal reading journey.</p>
+
+        <p>
+          View a summary of your personal reading journey.
+        </p>
       </section>
 
       <section class="content-section">
@@ -169,16 +338,19 @@
             <strong id="totalBooksStatistic">0</strong>
             <span>Total Books</span>
           </article>
+
           <article class="statistic-card">
             <i class="fa-solid fa-heart"></i>
             <strong id="favoriteBooksStatistic">0</strong>
             <span>Favorites</span>
           </article>
+
           <article class="statistic-card">
             <i class="fa-solid fa-book-open"></i>
             <strong id="readingBooksStatistic">0</strong>
             <span>Currently Reading</span>
           </article>
+
           <article class="statistic-card">
             <i class="fa-solid fa-circle-check"></i>
             <strong id="finishedBooksStatistic">0</strong>
@@ -201,22 +373,48 @@
     </section>
   </main>
 
-  <div id="bookModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-overlay" data-close-modal></div>
+  <!-- Book Details Modal -->
+  <div
+    id="bookModal"
+    class="modal hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+    <div
+      class="modal-overlay"
+      data-close-modal
+    ></div>
+
     <article class="modal-content">
-      <button class="modal-close-button" type="button" data-close-modal aria-label="Close book details">
+      <button
+        class="modal-close-button"
+        type="button"
+        data-close-modal
+        aria-label="Close book details"
+      >
         <i class="fa-solid fa-xmark"></i>
       </button>
+
       <div id="modalBody"></div>
     </article>
   </div>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
 
   <footer>
-    <p>Built with the Google Books API. Personal data is stored locally in the browser.</p>
+    <p>
+      Built with the Google Books API. Personal data is stored locally in
+      the browser.
+    </p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- v=4 forces GitHub Pages to load the newest script.js -->
+  <script src="./script.js?v=4" defer></script>
 </body>
 </html>
