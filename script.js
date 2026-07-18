@@ -100,7 +100,9 @@ function handleSearch(event) {
   state.currentQuery = query;
   saveRecentSearch(query);
   switchView("discover");
-  updateSearchHeading();
+
+  // THIS LINE IS MISSING
+  fetchBooks(true);
 }
 
 async function fetchBooks(resetResults = true) {
