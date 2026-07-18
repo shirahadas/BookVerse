@@ -103,6 +103,7 @@ function handleSearch(event) {
 
   // THIS LINE IS MISSING
   fetchBooks(true);
+  switchView("discover");
 }
 
 async function fetchBooks(resetResults = true) {
