@@ -1,60 +1,69 @@
-# ShelfSpace
+# 📚 BookVerse
 
-ShelfSpace is a responsive book discovery and personal reading dashboard powered by the Google Books API.
+BookVerse is a responsive web application that helps users discover books using the Google Books API and manage a personal reading library.
+
+The application allows users to search for books, browse by category, save favorites, organize their personal library, and track reading progress through an interactive dashboard.
+
+---
 
 ## Features
-- Search by title, author or ISBN
-- Real Google Books API data
-- Language and ebook filters
-- Sorting and pagination
-- Book details modal
-- Personal library
-- Favorites
-- Reading statuses
-- LocalStorage persistence
-- Dashboard statistics
-- Recent searches
-- Dark and light themes
-- Responsive design
+
+- 🔍 Search books using the Google Books API
+- 📖 Browse books by category
+- ❤️ Save favorite books
+- 📚 Personal library management
+- 📊 Reading statistics dashboard
+- 💾 LocalStorage persistence
+- 📱 Fully responsive interface
+
+---
 
 ## Technologies
-HTML5, CSS3, Vanilla JavaScript, Fetch API, Google Books API, LocalStorage and GitHub Pages.
 
-## Run Locally
-Open `index.html` directly, or run the project with Live Server in Visual Studio Code.
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Google Books API
+- LocalStorage
 
-## Data Source
-The application uses:
-`https://www.googleapis.com/books/v1/volumes`
+---
 
-## LocalStorage Keys
-- `shelfspace_library`
-- `shelfspace_recent_searches`
-- `shelfspace_theme`
+## Installation
 
-## Project Structure
-```text
-ShelfSpace/
-├── index.html
-├── style.css
-├── script.js
-├── PRD.md
-├── tasks.md
-└── README.md
+1. Clone the repository
+
+```bash
+git clone https://github.com/shirahadas/BookVerse.git
 ```
 
+2. Open the project folder.
+
+3. Launch `index.html` in your browser.
+
+---
+
+## Data Source
+
+This project uses the Google Books API to retrieve book information.
+
+User data (saved books and reading progress) is stored locally using the browser's LocalStorage.
+
+---
+
 ## Known Limitations
-- Internet connection is required for searches.
-- Some books may have missing images or metadata.
-- Saved data is limited to the current browser.
-- Clearing browser storage removes saved data.
 
-## Deployment
-Deploy from the `main` branch and `/(root)` using GitHub Pages.
+- Requires an internet connection to retrieve books.
+- Saved data is stored only in the current browser.
 
-Live URL:
-`https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`
+---
 
-## Documentation
-- [PRD](PRD.md)
-- [Tasks](tasks.md)
+## Project Documentation
+
+- PRD: `PRD.md`
+- Development Tasks: `tasks.md`
+
+---
+
+## Author
+
+Created as the final project for the **"From PRD to GitHub – Development with an AI Coding Assistant"** course.
